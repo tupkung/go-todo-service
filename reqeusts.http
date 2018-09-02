@@ -1,2 +1,10 @@
 # request to get info
 GET https://localhost:8080/
+
+GET https://localhost:8080/todo
+
+POST https://localhost:8080/todo
+
+PUT https://localhost:8080/todo
+
+DELETE https://localhost:8080/todo
