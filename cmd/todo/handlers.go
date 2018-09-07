@@ -37,13 +37,13 @@ func (app *App) Todo(w http.ResponseWriter, r *http.Request) {
 func (app *App) todoGet(w http.ResponseWriter, r *http.Request) {
 	app.writeAppJSONHeader(w, r)
 	w.WriteHeader(http.StatusOK)
-	w.Write([]byte("{'data':[{'title':'Task-1','complete':false},{'title':'Task-2','complete':false}]}"))
+	w.Write([]byte("{\"data\":[{\"title\":\"Task-1\",\"complete\":false},{\"title\":\"Task-2\",\"complete\":false}]}"))
 }
 
 func (app *App) todoPost(w http.ResponseWriter, r *http.Request) {
 	app.writeAppJSONHeader(w, r)
 	w.WriteHeader(http.StatusCreated)
-	w.Write([]byte("{'data':[],}"))
+	w.Write([]byte("{\"data\":[],}"))
 }
 
 func (app *App) todoPut(w http.ResponseWriter, r *http.Request) {
