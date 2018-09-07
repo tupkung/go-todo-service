@@ -1,6 +1,10 @@
 package main
 
-import "log"
+import (
+	"log"
+
+	"github.com/tupkung/go-todo-service/pkg/models"
+)
 
 //App type for using to collect configuration
 type App struct {
@@ -8,4 +12,5 @@ type App struct {
 	todoServiceCertFile string
 	todoServiceKeyFile  string
 	logger              *log.Logger
+	dataBase            *models.Database
 }
