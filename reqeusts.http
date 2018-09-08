@@ -3,8 +3,8 @@ GET https://localhost:8080/
 
 GET https://localhost:8080/todo
 
-POST https://localhost:8080/todo
+CURL -XPOST -H 'Content-Type:application/x-www-form-urlencoded' -d 'title=task12' https://localhost:8080/todo
 
-PUT https://localhost:8080/todo
+CURL -XPUT -H 'Content-Type:application/x-www-form-urlencoded' -d 'uid=f322c9c4-b382-11e8-814f-b8aeed7e3dfd&complete=true&title=task22' https://localhost:8080/todo
 
-DELETE https://localhost:8080/todo
+DELETE https://localhost:8080/todo?uid=1cf360be-b383-11e8-a134-b8aeed7e3dfd

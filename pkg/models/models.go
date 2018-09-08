@@ -2,9 +2,9 @@ package models
 
 // Task type to hold the information about an
 type Task struct {
-	ID         string
-	Title      string
-	IsComplete bool
+	ID         string `json:"id"`
+	Title      string `json:"title"`
+	IsComplete bool   `json:"complete"`
 	Created    int64
 	Updated    int64
 }
