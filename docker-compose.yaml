@@ -1,0 +1,20 @@
+version: '3'
+services:
+  todoapp:
+    links:
+      - todo-db
+    build:
+      context: .
+      dockerfile: todoservice.Dockerfile
+    image: todoapp:1.0.0
+    environment:
+      - TODO_SERVICE_ADDR=:8080
+      - TODO_SERVICE_CERT_FILE=./localhost.crt
+      - TODO_SERVICE_KEY_FILE=./localhost.key
+      - TODO_MYSQL_DSN=root:p@ssw0rd@tcp(todo-db)/
+    ports:
+      - "8080:8080"
+  todo-db:
+    image: mysql:8
+    environment:
+      - MYSQL_ROOT_PASSWORD=p@ssw0rd
