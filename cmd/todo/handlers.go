@@ -5,10 +5,20 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
+	"time"
 
 	"github.com/tupkung/go-todo-service/pkg/forms"
 	"github.com/tupkung/go-todo-service/pkg/models"
 )
+
+//Logger middleware
+func (app *App) Logger(next http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		startTime := time.Now()
+		defer app.logger.Printf("request processed in %s\n", time.Now().Sub(startTime))
+		next(w, r)
+	}
+}
 
 //Home for serving info content
 func (app *App) Home(w http.ResponseWriter, r *http.Request) {
